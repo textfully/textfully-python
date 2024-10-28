@@ -2,6 +2,8 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![Build](https://github.com/gtfol/textfully-go/actions/workflows/python.yml/badge.svg)
+[![codecov](https://codecov.io/gh/gtfol/textfully-python/branch/main/graph/badge.svg)](https://codecov.io/gh/gtfol/textfully-python)
 [![PyPI](https://img.shields.io/pypi/v/textfully)](https://pypi.org/project/textfully)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/textfully)](https://pypi.org/project/textfully)
 
