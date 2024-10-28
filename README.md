@@ -25,10 +25,10 @@ First, you need to generate an API key from the [Textfully Dashboard](https://te
 import textfully
 
 # Set your API key
-textfully.api_key = "tx_apikey"
+textfully.api_key = "tx_123"
 
 # Send a message
-response = textfully.send(
+textfully.send(
     "+16175555555", # your verified phone number
     "Hello, world!"
 )
