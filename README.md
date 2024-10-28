@@ -25,7 +25,7 @@ First, you need to generate an API key from the [Textfully Dashboard](https://te
 import textfully
 
 # Set your API key
-textfully.api_key = "tx_123"
+textfully.api_key = "tx_apikey"
 
 # Send a message
 textfully.send(
@@ -33,3 +33,7 @@ textfully.send(
     "Hello, world!"
 )
 ```
+
+## Contributing
+
+Contributing to the Python library is a great way to get involved with the Textfully community. Reach out to us on [Discord](https://discord.gg/Ct6FDCpFBU) or through email at [textfully@gtfol.inc](mailto:textfully@gtfol.inc) if you want to get involved.
