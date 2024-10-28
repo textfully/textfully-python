@@ -1,4 +1,5 @@
 import pytest
+import requests
 import textfully
 from textfully.exceptions import APIError
 
@@ -11,7 +12,7 @@ def test_invalid_phone_number():
     assert "Invalid phone number format" in str(exc_info.value)
 
 
-def test_successful_send(requests_mock):
+def test_successful_send(mock_requests):
     """Test successful message sending."""
     textfully.api_key = "test_key"
     mock_response = {
@@ -19,20 +20,20 @@ def test_successful_send(requests_mock):
         "status": "queued",
         "created_at": "2024-03-21T10:00:00Z",
     }
-    requests_mock.post("https://api.textfully.dev/v1/messages", json=mock_response)
+    mock_requests.post("https://api.textfully.dev/v1/messages", json=mock_response)
 
     response = textfully.send("+16175555555", "Test message")
     assert response["id"] == "msg_123"
     assert response["status"] == "queued"
 
 
-def test_api_error(requests_mock):
+def test_api_error(mock_requests):
     """Test handling of API errors."""
     textfully.api_key = "test_key"
     error_response = {
         "error": {"type": "rate_limit_error", "message": "Too many requests"}
     }
-    requests_mock.post(
+    mock_requests.post(
         "https://api.textfully.dev/v1/messages", status_code=429, json=error_response
     )
 
@@ -41,10 +42,10 @@ def test_api_error(requests_mock):
     assert "Too many requests" in str(exc_info.value)
 
 
-def test_timeout(requests_mock):
+def test_timeout(mock_requests):
     """Test handling of request timeouts."""
     textfully.api_key = "test_key"
-    requests_mock.post(
+    mock_requests.post(
         "https://api.textfully.dev/v1/messages", exc=requests.exceptions.Timeout
     )
 

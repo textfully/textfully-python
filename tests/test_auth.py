@@ -11,10 +11,10 @@ def test_api_key_required():
     assert "No API key provided" in str(exc_info.value)
 
 
-def test_invalid_api_key(requests_mock):
+def test_invalid_api_key(mock_requests):
     """Test that invalid API key raises appropriate error."""
     textfully.api_key = "invalid_key"
-    requests_mock.post(
+    mock_requests.post(
         "https://api.textfully.dev/v1/messages",
         status_code=401,
         json={"error": {"type": "authentication_error", "message": "Invalid API key"}},
