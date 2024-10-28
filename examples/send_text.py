@@ -6,7 +6,7 @@ textfully.api_key = os.getenv("TEXTFULLY_API_KEY", "your_api_key_here")
 
 # Send a simple message
 response = textfully.send(
-    "+16175555555",  # your verified phone number
+    "+16175555555",  # verified phone number
     "Hello, world!",
 )
 print(f"Message sent! ID: {response['id']}")
