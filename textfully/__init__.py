@@ -77,8 +77,28 @@ def send(phone_number: str, text: str) -> Dict[str, Any]:
         APIError: If the API request fails or returns an error
         ValueError: If the phone number format is invalid
     """
-    # Basic phone number validation
-    if not phone_number.startswith("+") or not phone_number[1:].isdigit():
+    # Enhanced phone number validation
+    if not phone_number:
+        raise ValueError(
+            "Invalid phone number format. Must be in E.164 format (e.g., +16175555555)"
+        )
+
+    # Check for basic E.164 format requirements
+    if not phone_number.startswith("+") or phone_number.count("+") > 1:
+        raise ValueError(
+            "Invalid phone number format. Must be in E.164 format (e.g., +16175555555)"
+        )
+
+    # Remove the plus for further validation
+    digits = phone_number[1:]
+
+    # Check if remaining characters are digits and length is valid (typically 10-15 digits)
+    if (
+        not digits.isdigit()
+        or len(digits) < 10
+        or len(digits) > 15
+        or digits.startswith("0")
+    ):
         raise ValueError(
             "Invalid phone number format. Must be in E.164 format (e.g., +16175555555)"
         )
