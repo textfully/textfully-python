@@ -21,7 +21,7 @@ pytest
 
 ```sh
 git add setup.py textfully/version.py
-git commit -m "Version vX.Y.Z"
+git commit -m "vX.Y.Z"
 git tag vX.Y.Z
 ```
 
