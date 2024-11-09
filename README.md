@@ -36,6 +36,8 @@ textfully.send(
 )
 ```
 
+Check out example implementations in the [examples](./examples) directory.
+
 ## Contributing
 
 Contributing to the Python library is a great way to get involved with the Textfully community. Reach out to us on [Discord](https://discord.gg/Ct6FDCpFBU) or through email at [textfully@gtfol.inc](mailto:textfully@gtfol.inc) if you want to get involved.
