@@ -7,7 +7,7 @@ An open-source Twilio alternative that lets developers send texts easily.
 Basic usage:
     >>> import textfully
     >>> textfully.api_key = "your-api-key"
-    >>> textfully.send("+16175555555", "Hello, world!")
+    >>> textfully.send("+16178856037", "Hello, world!")
 
 Full documentation is available at https://textfully.dev/docs/python
 """
@@ -96,7 +96,7 @@ def send(
     Send a text message using Textfully.
 
     Args:
-        to (str): The recipient's phone number in E.164 format (e.g., +16175555555)
+        to (str): The recipient's phone number in E.164 format (e.g., +16178856037)
         text (str): The message text to send
         service (MessageService, optional): The messaging service to use (sms or imessage)
 
@@ -116,13 +116,13 @@ def send(
     # Enhanced phone number validation
     if not to:
         raise ValueError(
-            "Invalid phone number format. Must be in E.164 format (e.g., +16175555555)"
+            "Invalid phone number format. Must be in E.164 format (e.g., +16178856037)"
         )
 
     # Check for basic E.164 format requirements
     if not to.startswith("+") or to.count("+") > 1:
         raise ValueError(
-            "Invalid phone number format. Must be in E.164 format (e.g., +16175555555)"
+            "Invalid phone number format. Must be in E.164 format (e.g., +16178856037)"
         )
 
     # Remove the plus for further validation
@@ -136,7 +136,7 @@ def send(
         or digits.startswith("0")
     ):
         raise ValueError(
-            "Invalid phone number format. Must be in E.164 format (e.g., +16175555555)"
+            "Invalid phone number format. Must be in E.164 format (e.g., +16178856037)"
         )
 
     payload = {"to": to, "text": text}

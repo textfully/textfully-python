@@ -9,7 +9,7 @@ def test_send_with_missing_api_key():
     textfully.api_key = None  # Override the fixture
 
     with pytest.raises(AuthenticationError) as exc:
-        send("+16175555555", "Test message")
+        send("+16178856037", "Test message")
     assert "No API key provided" in str(exc.value)
 
 
@@ -36,7 +36,7 @@ def test_send_with_malformed_phone(mock_requests):
     test_cases = [
         "+123",  # Too short
         "+11234567890123456",  # Too long
-        "++16175555555",  # Double plus
+        "++16178856037",  # Double plus
         "+1617555555a",  # Non-numeric characters
         "+0123456789",  # Starting with 0 after +
     ]

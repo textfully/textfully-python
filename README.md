@@ -31,7 +31,7 @@ textfully.api_key = "tx_apikey"
 
 # Send a message
 textfully.send(
-    "+16175555555", # verified phone number
+    "+16178856037", # verified phone number
     "Hello, world!"
 )
 ```
